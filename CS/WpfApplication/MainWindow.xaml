@@ -1,0 +1,47 @@
+﻿<dx:ThemedWindow
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" 
+        x:Class="WpfApplication.MainWindow"
+        WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="600" Width="800">
+    <Grid>
+        <TabControl Margin="4">
+            <TabItem Header="XPServerModeView">
+                <dxg:GridControl Grid.Row="1" ItemsSource="{Binding OrdersXPServerModeView}">
+                    <dxg:GridControl.View>
+                        <dxg:TableView AutoWidth="True" AllowEditing="False" ShowSearchPanelMode="Never" />
+                    </dxg:GridControl.View>
+                    <dxg:GridControl.Columns>
+                        <dxg:GridColumn FieldName="Oid"/>
+                        <dxg:GridColumn FieldName="OrderDate" />
+                        <dxg:GridColumn FieldName="Customer" />
+                        <dxg:GridColumn FieldName="ProductName"/>
+                        <dxg:GridColumn FieldName="Price" />
+                        <dxg:GridColumn FieldName="Quantity" />
+                        <dxg:GridColumn FieldName="TotalPrice" />
+                        <dxg:GridColumn FieldName="PercentFromSalesByMonth" />
+                    </dxg:GridControl.Columns>
+                </dxg:GridControl>
+            </TabItem>
+            <TabItem Header="XPInstantFeedbackView">
+                <dxg:GridControl Grid.Row="1" ItemsSource="{Binding OrdersXPInstantFeedbackView}">
+                    <dxg:GridControl.View>
+                        <dxg:TableView AutoWidth="True" AllowEditing="False" ShowSearchPanelMode="Never" />
+                    </dxg:GridControl.View>
+                    <dxg:GridControl.Columns>
+                        <dxg:GridColumn FieldName="Oid"/>
+                        <dxg:GridColumn FieldName="OrderDate" />
+                        <dxg:GridColumn FieldName="Customer" />
+                        <dxg:GridColumn FieldName="ProductName"/>
+                        <dxg:GridColumn FieldName="Price" />
+                        <dxg:GridColumn FieldName="Quantity" />
+                        <dxg:GridColumn FieldName="TotalPrice" />
+                        <dxg:GridColumn FieldName="PercentFromSalesByMonth" />
+                    </dxg:GridControl.Columns>
+                </dxg:GridControl>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</dx:ThemedWindow>
