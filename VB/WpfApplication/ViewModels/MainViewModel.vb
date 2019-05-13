@@ -12,18 +12,18 @@ Namespace WpfApplication.ViewModels
 	Friend Class MainViewModel
 
 		Public Sub New()
-			Dim viewProperties = New ServerViewProperty() {
-				New ServerViewProperty("Oid", SortDirection.Ascending, "[Oid]"),
-				New ServerViewProperty("OrderDate", SortDirection.None, "[OrderDate]"),
-				New ServerViewProperty("Customer", SortDirection.None, "[Customer.ContactName]"),
-				New ServerViewProperty("ProductName", SortDirection.None, "[ProductName]"),
-				New ServerViewProperty("Price", SortDirection.None, "[Price]"),
-				New ServerViewProperty("Quantity", SortDirection.None, "[Quantity]"),
-				New ServerViewProperty("TotalPrice", SortDirection.None, "[Quantity] * [Price]"),
-				New ServerViewProperty("PercentFromSalesByMonth", SortDirection.None, "[Quantity] * [Price] / [<Order>][GetYear([OrderDate]) = GetYear([^.OrderDate]) And GetMonth([OrderDate]) = GetMonth([^.OrderDate])].Sum([Quantity] * [Price]) * 100")
-			}
+            Dim viewProperties = New ServerViewProperty() {
+                New ServerViewProperty("Oid", SortDirection.Ascending, "[Oid]"),
+                New ServerViewProperty("OrderDate", SortDirection.None, "[OrderDate]"),
+                New ServerViewProperty("Customer", SortDirection.None, "[Customer.ContactName]"),
+                New ServerViewProperty("ProductName", SortDirection.None, "[ProductName]"),
+                New ServerViewProperty("Price", SortDirection.None, "[Price]"),
+                New ServerViewProperty("Quantity", SortDirection.None, "[Quantity]"),
+                New ServerViewProperty("TotalPrice", SortDirection.None, "[Quantity] * [Price]"),
+                New ServerViewProperty("Tax", SortDirection.None, "[Quantity] * [Price] * 0.13")
+            }
 
-			Dim session As New UnitOfWork(XpoDefault.DataLayer)
+            Dim session As New UnitOfWork(XpoDefault.DataLayer)
             _ordersXpServerModeView = New XPServerModeView(session, GetType(Order))
             _ordersXpServerModeView.Properties.AddRange(viewProperties)
 

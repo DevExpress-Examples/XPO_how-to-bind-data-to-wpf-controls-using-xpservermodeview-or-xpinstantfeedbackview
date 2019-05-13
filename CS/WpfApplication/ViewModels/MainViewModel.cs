@@ -20,7 +20,7 @@ namespace WpfApplication.ViewModels {
                 new ServerViewProperty("Price", SortDirection.None, "[Price]"),
                 new ServerViewProperty("Quantity", SortDirection.None, "[Quantity]"),
                 new ServerViewProperty("TotalPrice", SortDirection.None, "[Quantity] * [Price]"),
-                new ServerViewProperty("PercentFromSalesByMonth", SortDirection.None, "[Quantity] * [Price] / [<Order>][GetYear([OrderDate]) = GetYear([^.OrderDate]) And GetMonth([OrderDate]) = GetMonth([^.OrderDate])].Sum([Quantity] * [Price]) * 100")
+                new ServerViewProperty("Tax", SortDirection.None, "[Quantity] * [Price] * 0.13")
             };
 
             UnitOfWork session = new UnitOfWork(XpoDefault.DataLayer);

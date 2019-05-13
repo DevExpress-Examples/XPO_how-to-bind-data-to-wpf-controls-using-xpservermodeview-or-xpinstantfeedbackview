@@ -21,7 +21,7 @@
                         <dxg:GridColumn FieldName="Price" />
                         <dxg:GridColumn FieldName="Quantity" />
                         <dxg:GridColumn FieldName="TotalPrice" />
-                        <dxg:GridColumn FieldName="PercentFromSalesByMonth" />
+                        <dxg:GridColumn FieldName="Tax" />
                     </dxg:GridControl.Columns>
                 </dxg:GridControl>
             </TabItem>
@@ -38,7 +38,7 @@
                         <dxg:GridColumn FieldName="Price" />
                         <dxg:GridColumn FieldName="Quantity" />
                         <dxg:GridColumn FieldName="TotalPrice" />
-                        <dxg:GridColumn FieldName="PercentFromSalesByMonth" />
+                        <dxg:GridColumn FieldName="Tax" />
                     </dxg:GridControl.Columns>
                 </dxg:GridControl>
             </TabItem>
