@@ -7,8 +7,9 @@
         xmlns:local="clr-namespace:WpfApplication"
         xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" ResizeMode="NoResize" x:Class="WpfApplication.ProgressWindow"
         mc:Ignorable="d"
-        Title="Sample Data Generation..." Height="75" Width="360" WindowStartupLocation="CenterScreen">
-    <Grid>
-        <dxe:ProgressBarEdit Margin="8" Minimum="0" Maximum="100" x:Name="progressBarEdit" />
-    </Grid>
+        Title="Sample Data Generation..." Width="360" SizeToContent="Height" WindowStartupLocation="CenterScreen">
+    <StackPanel Margin="4">
+        <Label x:Name="progressLabel" Grid.Row="0" Content="" />
+        <dxe:ProgressBarEdit Grid.Row="1" Minimum="0" Maximum="100" x:Name="progressBarEdit" />
+    </StackPanel>
 </dx:ThemedWindow>

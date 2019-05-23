@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace XpoTutorial {
     public static class DemoDataHelper {
+        public const int RecordsCount = 100000;
         private static string[] firstNames = new string[] {
             "Peter", "Ryan", "Richard", "Tom", "Mark", "Steve",
             "Jimmy", "Jeffrey", "Andrew", "Dave", "Bert", "Mike",
@@ -57,9 +58,8 @@ namespace XpoTutorial {
                     });
                 }
             }
-            const int batchSize = 100;
-            const int recordsCount = 100000;
-            for(int i = 0; i < recordsCount; i += batchSize) {
+            const int batchSize = 250;
+            for(int i = 0; i < RecordsCount; i += batchSize) {
                 for(int j = 0; j < batchSize; j++) {
                     Order order = new Order(uow);
                     order.ProductName = productNames[Random.Next(productNames.Length)];
@@ -70,7 +70,7 @@ namespace XpoTutorial {
                 }
                 await uow.CommitChangesAsync();
                 if(progressHandler != null) {
-                    progressHandler.Report(i * 100 / recordsCount);
+                    progressHandler.Report(i);
                 }
             }
         }

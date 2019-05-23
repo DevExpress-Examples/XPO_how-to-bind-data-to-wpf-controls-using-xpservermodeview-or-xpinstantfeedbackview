@@ -22,7 +22,7 @@ Namespace WpfApplication
 
 		Private Sub GenerateSampleData()
 			Using uow As New UnitOfWork()
-				Dim progressForm As New ProgressWindow()
+				Dim progressForm As New ProgressWindow(DemoDataHelper.RecordsCount)
 				AddHandler progressForm.Loaded, Async Sub(s, args)
 					If DemoDataHelper.IsSeedRequired(uow) Then
 						Await DemoDataHelper.SeedAsync(uow, progressForm)

@@ -20,7 +20,7 @@ namespace WpfApplication {
 
         void GenerateSampleData() {
             using(UnitOfWork uow = new UnitOfWork()) {
-                ProgressWindow progressForm = new ProgressWindow();
+                ProgressWindow progressForm = new ProgressWindow(DemoDataHelper.RecordsCount);
                 progressForm.Loaded += async (s, args) => {
                     if(DemoDataHelper.IsSeedRequired(uow)) {
                         await DemoDataHelper.SeedAsync(uow, progressForm);
